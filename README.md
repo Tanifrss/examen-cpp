@@ -1,67 +1,13 @@
-C++
 ```
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
+Nombre:Tania Fallas Robles 
 
-struct Producto {
-    string nombre;
-    double precio;
-    int cantidad;
-};
-
-// Devuelve la suma de precio * cantidad de todos los productos[cite: 1]
-double calcularSubtotal(const vector<Producto>& productos) {
-    double subtotal = 0;
-    for (size_t i = 0; i < productos.size(); i++) {
-        subtotal += productos[i].precio * productos[i].cantidad;
-    }
-    return subtotal;
-}
-
-// Devuelve el descuento que corresponde al subtotal[cite: 1]
-double calcularDescuento(double subtotal) {
-    if (subtotal > 50000.0) {
-        return subtotal * 0.10;
-    }
-    return 0.0;
-}
-
-// Devuelve el impuesto que corresponde a la base[cite: 1]
-double calcularImpuesto(double base) {
-    return base * 0.13;
-}
-
-int main() {
-    vector<Producto> productos = {
-        {"Teclado", 12500.0, 2},
-        {"Mouse", 6500.0, 3},
-        {"Cable HDMI", 3000.0, 4},
-        {"Webcam", 18000.0, 1}
-    };
-
-    for (size_t i = 0; i < productos.size(); i++) {
-        cout << productos[i].nombre << " x" << productos[i].cantidad
-             << " = " << productos[i].precio * productos[i].cantidad << endl;
-    }
-
-    double subtotal = calcularSubtotal(productos);
-    cout << "subtotal: " << subtotal << endl;
-
-    // Se calcula el descuento, la base, el impuesto y el total[cite: 1]
-    double descuento = calcularDescuento(subtotal);
-    double base = subtotal - descuento;
-    double impuesto = calcularImpuesto(base);
-    double total = base + impuesto;
-
-    // Imprime igual que el subtotal
-    cout << "descuento: " << descuento << endl;
-    cout << "impuesto: " << impuesto << endl;
-    cout << "total: " << total << endl;
-
-    return 0;
-}
+| Línea | Justificación | Corrección |
+|---|---|---|
+| 14 | Falta el punto y coma después de cerrar la estructura `Jugador`. | Agregar `;` después de la llave: `};` |
+| 28 | Se asigna una cadena de texto a una variable de tipo `char`, que solo almacena un carácter. | Cambiar `"A"` por `'A'`: `char inicial = 'A';` |
+| 31 | Se crea una referencia a `a` en lugar de una copia independiente. Por eso, al modificar `a`, también cambia `respaldo`. | Crear una copia: `Jugador respaldo = a;` |
+| 16 | El parámetro `j` se pasa por valor, por lo que los cambios no afectan al jugador original. | Pasar el parámetro por referencia: `void sumarPuntos(Jugador& j, int extra)` |
+| 35 | La condición `a.puntos > 100` no se cumple cuando el puntaje llega exactamente a 100. | Cambiar `>` por `>=`: `if (a.puntos >= 100)` |
 ```
 
 
