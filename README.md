@@ -1,31 +1,17 @@
 
 C++
 ```
-| Linea  | Justificación              | Corrección                     |
-|   9    | Falta un punto             |  };                            |
-|        |y coma al final de          |                                |
-|        |la definición de            |                                |
-|        |la estructura               |                                |
-________________________________________________________________________
-| 16     | El uso del símbolo         | a.puntos = 90;                 |
-|        | $ es inválido para         |                                |
-|        | realizar una               |                                |
-|        | asignación de              |                                |
-|        | puntos.                    |                                |
-_______________________________________________________________________
-| 17     | Las comillas dobles        | char inicial = 'A';            |
-|        |  son para cadenas          |                                |
-|        |  (string); un char         |                                |
-|        |   requiere comillas        |                                |
-|        | simples.                   |                                |
-________________________________________________________________________
-| 20     | Los & deben inicializarse  | Jugador& respaldo = a;         |
-|        | obligatoriamente apuntando |                                |
-|        | a una variable existente.  |                                |
-_________________________________________________________________________
-| 30     | se usó >= para que        | if (a.puntos >= 100) {          |
-|        | detecte el 100            |                                 |
-|        |                           |                                 |
+# Corrección de examen de tecnología
+
+**Nombre:** [Escribe tu nombre completo]
+
+| Línea | Justificación | Corrección |
+| 14 | Falta el punto y coma después de cerrar la estructura `Jugador`. | Agregar `;` después de la llave: `};` |
+| 28 | Se asigna una cadena de texto a una variable de tipo `char`, que solo almacena un carácter. | Cambiar `"A"` por `'A'`: `char inicial = 'A';` |
+| 31 | Se crea una referencia a `a` en lugar de una copia independiente. Por eso, al modificar `a`, también cambia `respaldo`. | Crear una copia: `Jugador respaldo = a;` |
+| 16 | El parámetro `j` se pasa por valor, por lo que los cambios no afectan al jugador original. | Pasar el parámetro por referencia: `void sumarPuntos(Jugador& j, int extra)` |
+| 35 | La condición `a.puntos > 100` no se cumple cuando el puntaje llega exactamente a 100. | Cambiar `>` por `>=`: `if (a.puntos >= 100)` |
+
 
 ```
 
