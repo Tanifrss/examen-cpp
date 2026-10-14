@@ -1,9 +1,8 @@
 
 C++
-```
-# Corrección de examen de tecnología
 
-**Nombre:** [Escribe tu nombre completo]
+
+Nombre: Tania Fallas Robles 
 
 | Línea | Justificación | Corrección |
 | 14 | Falta el punto y coma después de cerrar la estructura `Jugador`. | Agregar `;` después de la llave: `};` |
